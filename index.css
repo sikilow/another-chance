@@ -8,9 +8,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(https://wallpapers.com/images/hd/studio-ghibli-desktop-flower-field-i6dl37cc7qc40trt.jpg);
-    background-size: auto;
-    background-repeat: no-repeat;
+    background: #f5b6b0;
     font-family: sans-serif;
     padding: 20px;
   }
