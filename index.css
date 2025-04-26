@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f5b6b0;
+    font-family: sans-serif;
+    padding: 20px;
+  }
+
+  .envelope {
+    position: relative;
+    width: 90vw;
+    max-width: 750px;
+    aspect-ratio: 15 / 8;
+    background: #f4d197;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.5s;
+  }
+
+  .flap, .flap2, .down {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    transition: transform 0.5s;
+    transform-origin: top;
+    z-index: 2;
+  }
+
+  .flap {
+    top: 0;
+    background: #e6c67e;
+    clip-path: polygon(100% 0%, 50% 100%, 0% 0%);
+  }
+
+  .flap2 {
+    top: 0;
+    background: transparent;
+  }
+
+  .down {
+    bottom: 0;
+    
+    height: 60%;
+    background: #f4d197;
+    transform-origin: bottom;
+    transform: rotateX(0deg);
+    z-index: 1;
+   
+  }
+  
+
+  .letter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 92%;
+    height: auto;
+    background: white;
+    margin: 10px 4%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.5s, opacity 0.5s;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  .envelope.open .flap,
+  .envelope.open .flap2 {
+    transform: rotateX(-180deg);
+  }
+
+  .envelope.open .down {
+    transform: rotateX(180deg);
+  }
+
+  .envelope.open .letter {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .heard {
+    position: absolute;
+    top: 100%;
+    left: 43%;
+    width: 60px;
+    height: 60px;
+    background: red;
+    transform: rotate(-45deg);
+    transform-origin: top;
+    transition: transform 0.5s;
+    z-index: 4;
+  }
+
+  .envelope.open .heard {
+    animation: spinHeart 0.8s forwards;
+  }
+  
+
+  .heard::before,
+  .heard::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 50%;
+  }
+
+  .heard::before {
+    top: -30px;
+    left: 0;
+  }
+
+  .heard::after {
+    top: 0;
+    left: 30px;
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    border: 0;
+    display: block;
+    margin: 20px auto 0;
+  }
+
+  @media (max-width: 600px) {
+    .heard {
+      width: 40px;
+      height: 40px;
+      top: 100%;
+    left: 43%;
+    }
+
+    .heard::before,
+    .heard::after {
+      width: 40px;
+      height: 40px;
+    }
+
+    .heard::before {
+      top: -20px;
+    }
+
+    .heard::after {
+      left: 20px;
+    }
+
+    iframe {
+      height: 150px;
+    }
+  }

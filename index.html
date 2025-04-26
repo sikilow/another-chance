@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre Interactivo</title>
+ <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="envelope" onclick="toggleOpen(this)">
+  <div class="flap">
+   
+  </div>
+  <div class="flap2">
+    <div class="heard"></div>
+  </div>
+  
+  <div class="letter">
+    <h3>Hola Paola</h3>
+    <p>Espero te encuentres muy bien</p>
+    <p>Me encantaria invitarte un café y poder volvernos a conocer ,te veo en Cafe Luna a las 5 el Lunes 28 de Abril
+    </p>
+    <p>Attm: Alexis</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.6627448777213!2d-104.89517372397893!3d21.48174577206469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842736d88f8e16ab%3A0x3fef7ec55cd8cf47!2sCaf%C3%A9%20Luna%20de%20Nayarit!5e0!3m2!1ses!2smx!4v1745645302347!5m2!1ses!2smx" width="200" height="200" style="border:0;" style="align-content: center;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
+  <div class="down">
+    
+  </div>
+</div>
+
+<script>
+  function toggleOpen(envelope) {
+    envelope.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
