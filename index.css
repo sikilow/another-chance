@@ -137,6 +137,9 @@
   }
 
   @media (max-width: 600px) {
+    body{
+        background-image: url(https://wallpapers.com/images/hd/studio-ghibli-desktop-flower-field-i6dl37cc7qc40trt.jpg);
+    }
     .heard {
       width: 40px;
       height: 40px;
